@@ -1,0 +1,38 @@
+{
+  "courses": [
+    {
+      "status": "Open",
+      "title": "ACCT*1220*0101 (4675) Intro Financial Accounting",
+      "term": "Winter 2021",
+      "location": "Guelph",
+      "meeting_info": "LEC Mon\n11:30AM - 01:20PM\nAD-S, Room Virtual\nSEM Tues\n08:30AM - 09:20AM\nAD-S, Room Virtual\nEXAM Fri\n08:30AM - 10:30AM (2021/04/23)\nRoom TBA",
+      "faculty": "D. Senkl",
+      "credits": "0.50",
+      "academic_level": "Undergraduate",
+      "available": "4",
+      "capacity": "60",
+      "code": {
+        "type": "ACCT",
+        "number": "1220",
+        "section": "0101"
+      }
+    },
+    {
+      "status": "Open",
+      "title": "ACCT*1220*0102 (4676) Intro Financial Accounting",
+      "term": "Winter 2021",
+      "location": "Guelph",
+      "meeting_info": "LEC Mon\n11:30AM - 01:20PM\nAD-S, Room Virtual\nSEM Tues\n09:30AM - 10:20AM\nAD-S, Room Virtual\nEXAM Fri\n08:30AM - 10:30AM (2021/04/23)\nRoom TBA",
+      "faculty": "D. Senkl",
+      "credits": "0.50",
+      "academic_level": "Undergraduate",
+      "available": "3",
+      "capacity": "60",
+      "code": {
+        "type": "ACCT",
+        "number": "1220",
+        "section": "0102"
+      }
+    }
+  ]
+}

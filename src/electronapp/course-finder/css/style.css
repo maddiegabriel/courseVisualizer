@@ -1,0 +1,157 @@
+body {
+  background-color: white;
+}
+
+table {
+	margin: auto;
+	border-collapse:collapse;
+}
+
+td {
+  padding: 2.5px;
+}
+
+.submitButton {
+	margin: auto;
+	display: block;
+  width: 150px;
+}
+
+.downloadButton {
+	margin: auto;
+	display: block;
+  width: 180px;
+  height: 40px;
+  background-color: #c2d9ec;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 2px solid rgb(43, 43, 43);
+}
+
+.downloadButton:hover {
+  background-color: #a4e1e6;
+}
+
+.codeForm, .titleForm, .semForm, .weightForm, .depForm {
+	width: 340px;
+}
+
+.searchTitle {
+	text-align: center;
+	padding-top: 40px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5%;
+  background-color: #F8F9FA;
+  color: black;
+  text-align: center;
+}
+
+.footerObject {
+	color: black;
+	padding-right: 50px;
+	padding-left: 50px;
+}
+
+h1 {
+  color: white;
+  font-family: sans-serif;
+  padding-left: 10px;
+}
+
+h2 {
+  padding: 5px;
+}
+
+.jumbotron {
+  background-image: url(https://marvel-b1-cdn.bc0a.com/f00000000209359/www.uoguelph.ca/registrar/sis-refresh/sites/default/files/HomepageBanner2_20182.jpg);
+  background-size: 125%;
+  margin-bottom: 2px;
+  height: 200px;
+  color: white;
+}
+
+.jumbotron .container {
+  margin-left: 0;
+  padding-left: 10px;
+}
+
+#sectionHead {
+  padding: 2rem 3rem;
+  font-weight: bold;
+}
+
+.header-link {
+  color: white;
+  text-decoration: none;
+}
+
+.header-link:hover {
+  color: rgb(255, 187, 0);
+  text-decoration: none;
+}
+
+/* Search Results */
+
+.course {
+  height: 600px;
+  overflow: scroll;
+  margin: 3rem;
+  margin-top: 0;
+}
+
+#courseTable {
+  width: 100%;
+  background-color: lightcyan;
+  border: 1px solid rgb(199, 199, 199);
+  border-radius: 5px;
+}
+
+#courseTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  background-color: darkcyan;
+  color: rgb(237, 245, 252);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  position: sticky;
+  top: 0;
+}
+
+#courseTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.dataTables_wrapper {
+  font-family: sans-serif;
+}
+
+.course_visualization {
+  background-color: #051938;
+}
+
+.legend { list-style: none; }
+/*.legend li { float: left; margin-right: 10px; }*/
+.legend span { border: 1px solid #ccc; float: left; width: 15px; height: 15px; margin: 2px; }
+.legend .full { background-color: #bd0053; }
+.legend .ninety { background-color: #f56418; }
+.legend .sixty { background-color: #61b8c1; }
+.legend .fifty { background-color: #499dce; }
+.legend .forty { background-color: #618cc1; }
+.legend .empty { background-color: #008080; }
+
+#imageModalBody {
+  background-color: rgb(255, 255, 255);
+}
+
+#imageModalDialog {
+  width: 50%;
+  height: 60%;
+}

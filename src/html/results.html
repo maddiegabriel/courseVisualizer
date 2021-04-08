@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>U of G Course Visualizer</title>
+
+  <!-- CSS & fonts -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="./css/graphs.css" />
+
+  <!-- JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.5.0/dist/svg-pan-zoom.min.js"></script>
+  <script src="https://d3js.org/d3-zoom.v2.min.js"></script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script>
+    d3v4 = d3
+    window.d3 = null
+  </script>
+</head>
+
+<body onload="displayCourses()">
+
+  <!-- Header -->
+  <div class="jumbotron">
+    <h1><a href="index.team6.html" class="header-link">Course Visualizer</a></h1>
+    <div class="container">
+      Rated the number one project from CIS*4250 by 95% of students.
+    </div>
+  </div>
+
+  <!-- Section Selection Results Table -->
+  <h2 id="sectionHead">Search Results</h2>
+  <div class="course">
+    <table id="courseTable" class="table table-striped table-bordered" style="width:100%">
+      <thead>
+        <tr>
+          <th>Course Code</th>
+          <th>Title</th>
+          <th>Semester</th>
+          <th>Credit Weight</th>
+          <th>Description</th>
+          <th>Faculty</th>
+          <th>Department</th>
+          <th>Prerequisites</th>
+          <th>Availability / Capacity</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Back button to go back to search page -->
+  <button id="backButton" class="btn btn-dark downloadButton" type="submit">Back</button>
+
+  <h2 id="sectionHead">Course Visualization</h2>
+  <div>
+    <ul class="legend">
+      <li><span class="full"></span>Full</li>
+      <li><span class="ninety"></span>Over 90% full</li>
+      <li><span class="sixty"></span>Over 60% full</li>
+      <li><span class="fifty"></span>Over 50% full</li>
+      <li><span class="forty"></span>Over 40% full</li>
+      <li><span class="empty"></span>Less than 40% full</li>
+    </ul>
+  </div>
+  <!-- this is where the graph goes! -->
+  <div class="content" id="graphWrapper" >
+    <div id="visualization"></div>
+  </div>
+
+  <!-- Download button to download as .png file to search page -->
+  <button id="downloadPNG" class="btn btn-dark downloadButton" type="submit">Download graph as PNG</button>
+
+  <!-- Download button to download as .svg file to search page -->
+  <button id="downloadSVG" class="btn btn-dark downloadButton" type="submit">Download graph as SVG</button><br><br>
+
+  <div class="footer">
+    <a class="footerObject" href="index.team6.html">Home</a>
+    <a class="footerObject" href="about.html">About</a>
+    <a class="footerObject" href="team.html">Team</a>
+  </div>
+  
+
+  <!-- modal (hidden until table row click) -->
+  <div class="modal" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="myModalTitle"></h5>
+          <button type="button" class="close closeTree" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- tree diagram -->
+          <svg id="tree_graph" width="1500" height="1000"></svg>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary closeTree" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- image modal (hidden until table row click) -->
+  <div class="modal" id="imageModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" id="imageModalDialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="imageModalTitle"></h3>
+          <button type="button" class="close closeTree" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="imageModalBody">
+          <!-- tree diagram -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary closeTree" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- More JS -->
+  <script type="text/javascript" src="./js/main.js"></script>
+  <script type="text/javascript" src="./js/d3/d3.js"></script>
+  <script type="text/javascript" src="./js/d3/d3.geom.js"></script>
+  <script type="text/javascript" src="./js/d3/d3.layout.js"></script>
+  <script type="text/javascript" src="./js/CodeFlower.js"></script>
+  <script type="text/javascript" src="./js/displayGraph.js"></script>
+</body>

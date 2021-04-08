@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>U of G Course Visualizer</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+  <script src="js/renderer.js"></script>
+  
+</head>
+
+<body onload="collectSearchQuery()">
+
+  <!-- Header -->
+  <div class="jumbotron">
+    <h1><a href="index.html" class="header-link">Course Visualizer</a></h1>
+    <div class="container">
+      Rated the number one project from CIS*4250 by 95% of students.
+    </div>
+  </div>
+
+  <!-- Search Form -->
+  <h5 id="searchHeader" class="searchTitle">Search</h5>
+  <table class="searchTable">
+    <tr>
+      <td>
+        <label for="code">Subject:</label>
+      </td>
+      <td>
+        <select class="subjectForm" id="subject" name="subject">
+          <option value=""></option>
+          <option value="ACCT">ACCT - Accounting</option>
+          <option value="AGR">AGR - Agriculture</option>
+          <option value="AHSS">AHSS - Arts/Humanities/Social Sci</option>
+          <option value="ANSC">ANSC - Animal Science</option>
+          <option value="ANTH">ANTH - Anthropology</option>
+          <option value="ARAB">ARAB - Arabic</option>
+          <option value="ARTH">ARTH - Art History</option>
+          <option value="ASCI">ASCI - Arts &amp; Sciences</option>
+          <option value="AVC">AVC - Art &amp; Visual Culture</option>
+          <option value="BADM">BADM - Business Administration</option>
+          <option value="BINF">BINF - Bioinformatics</option>
+          <option value="BIOC">BIOC - Biochemistry</option>
+          <option value="BIOL">BIOL - Biology</option>
+          <option value="BIOM">BIOM - Biomedical Science</option>
+          <option value="BIOP">BIOP - Biophysics</option>
+          <option value="BIOT">BIOT - Biotechnology</option>
+          <option value="BOT">BOT - Botany</option>
+          <option value="BUS">BUS - Business</option>
+          <option value="CCJP">CCJP - Criminology/Criminal Justice</option>
+          <option value="CDE">CDE - Capacity Development/Extension</option>
+          <option value="CHEM">CHEM - Chemistry</option>
+          <option value="CHIN">CHIN - Chinese</option>
+          <option value="CIS">CIS - Computing &amp; Information Sci.</option>
+          <option value="CLAS">CLAS - Classical Studies</option>
+          <option value="CLIN">CLIN - Clinical Studies</option>
+          <option value="CME">CME - Commerce,Management&amp;Economics</option>
+          <option value="CONS">CONS - Conservation Leadership</option>
+          <option value="COOP">COOP - Co-Op Education</option>
+          <option value="CROP">CROP - Crop Science</option>
+          <option value="CRWR">CRWR - Creative Writing</option>
+          <option value="CSTU">CSTU - Child Studies</option>
+          <option value="CTS">CTS - Culture and Technology Studies</option>
+          <option value="DAFL">DAFL - Agri-Food Leadership (diploma)</option>
+          <option value="DAGR">DAGR - Ag. &amp; Equine Studies (dip)</option>
+          <option value="DENM">DENM - Environmental Mngt (diploma)</option>
+          <option value="DEQN">DEQN - Equine (Diploma)</option>
+          <option value="DFN">DFN - Food &amp; Nutrition (diploma)</option>
+          <option value="DHRT">DHRT - Horticulture (diploma)</option>
+          <option value="DTM">DTM - Turf Management (diploma)</option>
+          <option value="DVT">DVT - Veterinary Technology (dip)</option>
+          <option value="ECON">ECON - Economics</option>
+          <option value="ECS">ECS - Early Childhood Studies</option>
+          <option value="EDRD">EDRD - Env. Design/Rural Development</option>
+          <option value="ENGG">ENGG - Engineering</option>
+          <option value="ENGL">ENGL - English</option>
+          <option value="ENVM">ENVM - Environmental Management</option>
+          <option value="ENVS">ENVS - Environmental Sciences</option>
+          <option value="EQN">EQN - Equine</option>
+          <option value="EURO">EURO - European Studies</option>
+          <option value="FARE">FARE - Food, Agr &amp; Resource Economics</option>
+          <option value="FCSS">FCSS - Family/Community Social Servic</option>
+          <option value="FIN">FIN - Finance</option>
+          <option value="FINA">FINA - Fine Art</option>
+          <option value="FOOD">FOOD - Food Science</option>
+          <option value="FRAN">FRAN - Family Rel's/Applied Nutrition</option>
+          <option value="FREN">FREN - French Studies</option>
+          <option value="FRHD">FRHD - Family Relations &amp; Human Dev.</option>
+          <option value="FSQA">FSQA - Food Safety &amp; Quality Assuranc</option>
+          <option value="GEOG">GEOG - Geography</option>
+          <option value="GERM">GERM - German Studies</option>
+          <option value="GREK">GREK - Greek Studies</option>
+          <option value="HHNS">HHNS - Human Health/Nutritional Sci</option>
+          <option value="HISP">HISP - Hispanic Studies</option>
+          <option value="HIST">HIST - History</option>
+          <option value="HK">HK - Human Kinetics</option>
+          <option value="HORT">HORT - Horticultural Science</option>
+          <option value="HROB">HROB - Human Resource/Organizat Behav</option>
+          <option value="HTM">HTM - Hospitality &amp; Tourism Mngt</option>
+          <option value="HUMN">HUMN - Humanities</option>
+          <option value="IBIO">IBIO - Integrative Biology</option>
+          <option value="IDEV">IDEV - International Development Std.</option>
+          <option value="IMPR">IMPR - Improvisation</option>
+          <option value="INDG">INDG - Indigenous Studies</option>
+          <option value="IPS">IPS - Interdisciplinary Physical Sci</option>
+          <option value="ISS">ISS - Interdisciplinary Social Sci.</option>
+          <option value="ITAL">ITAL - Italian Studies</option>
+          <option value="JLS">JLS - Justice &amp; Law Studies</option>
+          <option value="JUST">JUST - Justice Studies</option>
+          <option value="KIN">KIN - Kinesiology</option>
+          <option value="LACS">LACS - Latin American/Caribbean St</option>
+          <option value="LARC">LARC - Landscape Architecture</option>
+          <option value="LAT">LAT - Latin</option>
+          <option value="LEAD">LEAD - Leadership</option>
+          <option value="LING">LING - Linguistics</option>
+          <option value="LTS">LTS - Literary/Theatre Studies</option>
+          <option value="MATH">MATH - Mathematics</option>
+          <option value="MBG">MBG - Molecular Biology &amp; Genetics</option>
+          <option value="MCB">MCB - Molecular &amp; Cellular Biology</option>
+          <option value="MCS">MCS - Marketing &amp; Consumer Studies</option>
+          <option value="MDST">MDST - Media Studies</option>
+          <option value="MGMT">MGMT - Management</option>
+          <option value="MICR">MICR - Microbiology</option>
+          <option value="MUSC">MUSC - Music</option>
+          <option value="NANO">NANO - Nanoscience</option>
+          <option value="NEUR">NEUR - Neuroscience</option>
+          <option value="NUTR">NUTR - Nutrition</option>
+          <option value="OAGR">OAGR - Organic Agriculture</option>
+          <option value="ONEH">ONEH - One Health</option>
+          <option value="PABI">PABI - Pathobiology</option>
+          <option value="PATH">PATH - Pathology</option>
+          <option value="PBIO">PBIO - Plant Biology</option>
+          <option value="PHIL">PHIL - Philosophy</option>
+          <option value="PHYS">PHYS - Physics</option>
+          <option value="PLNT">PLNT - Plant Agriculture</option>
+          <option value="POLS">POLS - Political Science</option>
+          <option value="POPM">POPM - Population Medicine</option>
+          <option value="PORT">PORT - Portuguese</option>
+          <option value="PSYC">PSYC - Psychology</option>
+          <option value="REAL">REAL - Real Estate &amp; Housing</option>
+          <option value="RPD">RPD - Rural Planning &amp; Development</option>
+          <option value="RST">RST - Rural Studies</option>
+          <option value="SART">SART - Studio Art</option>
+          <option value="SCMA">SCMA - Science &amp; Math</option>
+          <option value="SOAN">SOAN - Sociology &amp; Anthropology</option>
+          <option value="SOC">SOC - Sociology</option>
+          <option value="SOPR">SOPR - Social Practice</option>
+          <option value="SPAN">SPAN - Spanish</option>
+          <option value="STAT">STAT - Statistics</option>
+          <option value="THST">THST - Theatre Studies</option>
+          <option value="TOX">TOX - Toxicology</option>
+          <option value="TRMH">TRMH - Tourism and Hospitality</option>
+          <option value="UNIV">UNIV - Interdisciplinary University</option>
+          <option value="VETM">VETM - Veterinary Medicine</option>
+          <option value="WMST">WMST - Women's Studies</option>
+          <option value="XSEN">XSEN - Seneca College</option>
+          <option value="ZOO">ZOO - Zoology</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+    <tr>
+      <td>
+        <label for="code">Code:</label>
+      </td>
+      <td>
+        <input class="codeForm" type="text" id="code" name="code" value="">
+      </td>
+    </tr>
+      <td>
+        <label for="title">Title:</label>
+      </td>
+      <td>
+        <input class="titleForm" type="text" id="title" name="title" value="">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label for="semester">Semester:</label>
+      </td>
+      <td>
+        <select class="semForm" id="semester" name="semester" value="">
+          <option value=""></option>
+          <option value="Fall">Fall</option>
+          <option value="Winter">Winter</option>
+          <option value="Summer">Summer</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label for="weight">Weight:</label>
+      </td>
+      <td>
+        <input class="weightForm" type="text" id="weight" name="weight" value ="">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label for="departments">Department:</label>
+      </td>
+      <td>
+        <input class="depForm" type="text" id="department" name="department" value="">
+      </td>
+    </tr>
+  </table>
+  <button id="submitButton" class="btn btn-dark submitButton" type="submit">Submit</button>
+
+  <div class="footer">
+    <a class="footerObject" href="index.html">Home</a>
+    <a class="footerObject" href="../../html/about.html">About</a>
+    <a class="footerObject" href="../../html/team.html">Team</a>
+  </div>
+</body>
+
+</html>
+

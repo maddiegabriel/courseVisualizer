@@ -1,0 +1,2 @@
+#!/bin/bash
+pdftotext -f 7 -raw -nopgbrk ./c12.pdf ./c12.txt

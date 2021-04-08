@@ -1,0 +1,94 @@
+#graphWrapper {
+    padding: 0rem 0rem 5rem 2.5rem;
+}
+
+svg {
+    border-radius: 50px;
+}
+
+#visualization {
+    overflow: auto;
+    fill: #051938;
+}
+
+circle.node {
+    cursor: pointer;
+    stroke: #4cb2c9;
+    stroke-width: 3px;
+}
+
+circle.node.collapsed {
+    stroke: #1489c9;
+}
+
+.nodetext {
+    fill: #fff;
+    font-weight: bold;
+    stroke: #062d68;
+    stroke-width: 0.9px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+line.link {
+    fill: none;
+    stroke: #004858;
+    stroke-width: 1.9px;
+}
+
+/* 
+ * Tree Diagram Style
+ */
+ .node {
+    cursor: pointer;
+}
+
+.node circle {
+    fill: #fff;
+    stroke: #185261;
+    stroke-width: 3px;
+}
+
+.modal-body {
+    background-color: rgb(5, 34, 71);
+}
+  
+.modal-dialog {
+    width: 80%;
+    height: 60%;
+}
+
+.treeButton {
+    background-color: #c2d9ec;
+    border-radius: 10px;
+}
+
+.treeButton:hover {
+    background-color: #a4e1e6;
+}
+
+.link, .links line {
+    fill: none;
+    stroke: #004858;
+    stroke-width: 2px;
+    stroke-opacity: 0.6;
+}
+
+.modal-title {
+    padding-bottom: 0;
+}
+
+text {
+    fill: #fff;
+    font-weight: bold;
+    stroke: #062d68;
+    stroke-width: 1.1px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+svg:not(:root) {
+    overflow: visible;
+}

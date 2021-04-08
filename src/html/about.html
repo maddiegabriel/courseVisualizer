@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>U of G Course Visualizer</title>
+
+  <!-- CSS & fonts -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="jumbotron">
+    <h1><a href="index.team6.html" class="header-link">Course Visualizer</a></h1>
+    <div class="container">
+      Rated the number one project from CIS*4250 by 95% of students.
+    </div>
+  </div>
+
+  <!-- Search Form -->
+  <h2 id="sectionHead">About</h2>
+
+  <div class="card" style="width: 60rem; margin-left: 2rem; margin-bottom: 5rem;">
+
+    <div class="card-body">
+      <h5 class="card-title">Purpose</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Why did we make this?</h6>
+      <p class="card-text carddd">
+        We built this project for CIS*4250 in Winter 2021. It includes a web app hosted at <a target="_blank" href="http://cis4250-06.socs.uoguelph.ca/">http://cis4250-06.socs.uoguelph.ca/</a> and an Electron desktop app with the same functionality.         This is a useful tool for current and future U of G students, staff, faculty, program counsellors and more!
+        <br><br>
+        The goal of the project is to be like Webadvisor - but way better. Our interface gives users an easy way to view, search and visualize course offerings at the University of Guelph.
+        Users can search through courses using various useful fields, then view a table and graph of their results. The graphs help visualize the prerequisite dependencies between courses using a tree layout.
+      </p>
+      <a href="https://webadvisor.uoguelph.ca/WebAdvisor/WebAdvisor?TYPE=M&PID=CORE-WBMAIN" target="_blank" class="card-link">View the Real Webadvisor</a>
+    </div>
+
+    <div class="card-body">
+      <h5 class="card-title">Code</h5>
+      <h6 class="card-subtitle mb-2 text-muted">How did we make this?</h6>
+      <p class="card-text carddd">
+        We used a few different tools to bring this project together.
+        We built a web scraper using Python to scrape Webadvisor for updated course offerings each day.
+        We also built a parser (also using Python) to parse and store additiona; information about each course.
+        Our web server was built using NGINX and our desktop app runs on Electron.
+        Our search API is built with Node.JS and Express, while our front end is simple HTML/CSS and JavaScript.
+        To see our project documentation and code, click the link below!
+      </p>
+      <a href="https://git.socs.uoguelph.ca/cis-4250-team-6/w21cis4250team6/-/tree/master/src" target="_blank" class="card-link">View our Repository</a>
+    </div>
+
+    <div class="card-body">
+      <h5 class="card-title">Authors</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Who made this?</h6>
+      <p class="card-text carddd">This project was made by Team 6 - you can read more about us on our team page below!</p>
+      <a href="team.html" target="_blank" class="card-link">About our Team</a>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <a class="footerObject" href="index.team6.html">Home</a>
+    <a class="footerObject" href="about.html">About</a>
+    <a class="footerObject" href="team.html">Team</a>
+  </div>
+</body>
+
+</html>
+

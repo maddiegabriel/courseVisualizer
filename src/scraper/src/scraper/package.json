@@ -1,0 +1,15 @@
+{
+  "name": "faenjkfhkjaefhkjaehfjkhfaejfhejafhjehfjaehjf--~~ahfjehfjkhaekjfhkjh~~",
+  "version": "1.0.0",
+  "description": "mega kickin bot axion",
+  "main": "index.js",
+  "author": "alistair",
+  "license": "HAHA youre UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "playwright": "^1.2.1"
+  },
+  "devDependencies": {
+    "playwright": "^1.8.0"
+  }
+}

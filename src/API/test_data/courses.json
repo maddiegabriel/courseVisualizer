@@ -1,0 +1,38 @@
+{
+    "courses": [
+        {
+            "code": "ACCT*1220",
+            "title": "Introductory Financial Accounting",
+            "semester": "F,W",
+            "load": "3-0",
+            "credit": "0.50",
+            "description": "This introductory course is designed to develop a foundational understanding of current accounting principles and their implication for published financial reports of business enterprises. It builds the base of knowledge and understanding required to succeed in more advanced study of accounting. The course approaches the subject from the point of view of the user of accounting information rather than that of a person who supplies the information.",
+            "departments": "Department(s): Department of Management",
+            "restrictions": "Restriction(s): ACCT*2220 , This is a Priority Access Course. Enrolment may be restricted to particular programs or specializations. See department for more information.",
+            "prerequisites": "",
+            "locations": "",
+            "offerings": "Offering(s): Also offered through Distance Education format.",
+            "equates": "",
+            "corequisites": "",
+            "mentions": ["ACCT*2220"],
+            "prerequisites_mentions": []
+        },
+        {
+            "code": "ACCT*1240",
+            "title": "Applied Financial Accounting",
+            "semester": "W",
+            "load": "3-0",
+            "credit": "0.50",
+            "description": "This course requires students to apply the fundamental principles emanating from accounting’s conceptual framework and undertake the practice of financial accounting. Students will become adept at performing the functions related to each step in the accounting cycle, up to and including the preparation of the financial statements and client reports. Students will also develop the skills necessary for assessing an organization’s system of internal controls and financial conditions.",
+            "departments": "Department(s): Department of Management",
+            "restrictions": "Restriction(s): ACCT*2240 , This is a Priority Access Course. Enrolment may be restricted to particular programs or specializations. See department for more information.",
+            "prerequisites": "Prerequisite(s): ACCT*1220 or ACCT*2220",
+            "locations": "",
+            "offerings": "",
+            "equates": "",
+            "corequisites": "",
+            "mentions": ["ACCT*1220", "ACCT*2220", "ACCT*2240"],
+            "prerequisites_mentions": ["ACCT*1220", "ACCT*2220"]
+        }
+    ]
+}

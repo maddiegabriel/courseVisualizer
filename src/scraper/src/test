@@ -1,0 +1,2 @@
+#!/bin/bash
+python3 -m doctest -v searcher/search.py searcher/display_export.py csv/generate_csv.py parser/course_parser.py

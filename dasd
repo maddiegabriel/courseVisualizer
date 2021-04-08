@@ -1,0 +1,1853 @@
+[1mdiff --git a/src/API/app.js b/src/API/app.js[m
+[1mindex e49514f..0211e7e 100644[m
+[1m--- a/src/API/app.js[m
+[1m+++ b/src/API/app.js[m
+[36m@@ -13,6 +13,7 @@[m [mapp.use(express.urlencoded({[m
+ [m
+ [m
+ function validateAndFormatSearch(search) {[m
+[32m+[m[41m   [m
+     if ('subject' in search) {[m
+         search['subject'] = search['subject'].toLowerCase();[m
+     }[m
+[1mdiff --git a/src/API/data/scraper.json b/src/API/data/scraper.json[m
+[1mindex 607236a..292c3ae 100644[m
+[1m--- a/src/API/data/scraper.json[m
+[1m+++ b/src/API/data/scraper.json[m
+[36m@@ -9,7 +9,7 @@[m
+       "faculty": "D. Senkl",[m
+       "credits": "0.50",[m
+       "academic_level": "Undergraduate",[m
+[31m-      "available": "3",[m
+[32m+[m[32m      "available": "4",[m
+       "capacity": "60",[m
+       "code": {[m
+         "type": "ACCT",[m
+[36m@@ -145,7 +145,7 @@[m
+       "faculty": "D. Senkl",[m
+       "credits": "0.50",[m
+       "academic_level": "Undergraduate",[m
+[31m-      "available": "4",[m
+[32m+[m[32m      "available": "5",[m
+       "capacity": "60",[m
+       "code": {[m
+         "type": "ACCT",[m
+[36m@@ -179,7 +179,7 @@[m
+       "faculty": "D. Senkl",[m
+       "credits": "0.50",[m
+       "academic_level": "Undergraduate",[m
+[31m-      "available": "4",[m
+[32m+[m[32m      "available": "5",[m
+       "capacity": "60",[m
+       "code": {[m
+         "type": "ACCT",[m
+[36m@@ -230,7 +230,7 @@[m
+       "faculty": "D. Senkl",[m
+       "credits": "0.50",[m
+       "academic_level": "Undergraduate",[m
+[31m-      "available": "12",[m
+[32m+[m[32m      "available": "13",[m
+       "capacity": "60",[m
+       "code": {[m
+         "type": "ACCT",[m
+[36m@@ -281,7 +281,7 @@[m
+       "faculty": "P. Ghattas",[m
+       "credits": "0.50",[m
+       "academic_level": "Undergraduate",[m
+[31m-      "available": "276",[m
+[32m+[m[32m      "available": "277",[m
+       "capacity": "550",[m
+       "code": {[m
+         "type": "ACCT",[m
+[36m@@ -298,7 +298,7 @@[m
+       "faculty": "P. Lassou",[m
+       "credits": "0.50",[m
+       "academic_level": "Undergraduate",[m
+[31m-      "available": "7",[m
+[32m+[m[32m      "available": "8",[m
+       "capacity": "60",[m
+       "code": {[m
+         "type": "ACCT",[m
+[36m@@ -1947,7 +1947,7 @@[m
+       "faculty": "J. Jacobson-Konefall",[m
+       "credits": "0.50",[m
+       "academic_level": "Undergraduate",[m
+[31m-      "available": "63",[m
+[32m+[m[32m      "available": "64",[m
+       "capacity": "200",[m
+       "code": {[m
+         "type": "ARTH",[m
+[36m@@ -3715,7 +3715,7 @@[m
+       "faculty": "W. Bettger",[m
+       "credits": "0.50",[m
+       "academic_level": "Undergraduate",[m
+[31m-      "available": "8",[m
+[32m+[m[32m      "available": "9",[m
+       "capacity": "30",[m
+       "code": {[m
+         "type": "BIOL",[m
+[36m@@ -3928,7 +3928,7 @@[m
+       }[m
+     },[m
+     {[m
+[31m-      "status": "Closed",[m
+[32m+[m[32m      "status": "Open",[m
+       "title": "BIOL*1090*0113 (4943) Intro to Molecular & Cell Biol",[m
+       "term": "Winter 2021",[m
+       "location": "Guelph",[m
+[36m@@ -3936,7 +3936,7 @@[m
+       "faculty": "A. Bendall, J. Lalonde",[m
+       "credits": "0.50",[m
+       "academic_level": "Undergraduate",[m
+[31m-      "available": "0",[m
+[32m+[m[32m      "available": "1",[m
+       "capacity": "30",[m
+       "code": {[m
+         "type": "BIOL",[m
+[36m@@ -4191,7 +4191,7 @@[m
+       "faculty": "A. Bendall, J. Lalonde",[m
+       "credits": "0.50",[m
+       "academic_level": "Undergraduate",[m
+[31m-      "available": "1",[m
+[32m+[m[32m      "available": "2",[m
+       "capacity": "30",[m
+       "code": {[m
+         "type": "BIOL",[m
+[36m@@ -4548,7 +4548,7 @@[m
+       "faculty": "M. Hajibabaei",[m
+       "credits": "0.50",[m
+       "academic_level": "Undergraduate",[m
+[31m-      "available": "6",[m
+[32m+[m[32m      "available": "7",[m
+       "capacity": "40",[m
+       "code": {[m
+         "type": "BIOL",[m
+[36m@@ -7709,7 +7709,7 @@[m
+       "faculty": "J. Walsh",[m
+       "credits": "0.50",[m
+       "academic_level": "Undergraduate",[m
+[31m-      "available": "15",[m
+[32m+[m[32m      "available": "16",[m
+       "capacity": "320",[m
+       "code": {[m
+         "type": "CLAS",[m
+[36m@@ -8423,7 +8423,7 @@[m
+       "faculty": "R. Chaturvedi",[m
+       "credits": "0.50",[m
+       "academic_level": "Undergraduate",[m
+[31m-      "available": "2",[m
+[32m+[m[32m      "available": "3",[m
+       "capacity": "34",[m
+       "code": {[m
+         "type": "CIS",[m
+[36m@@ -8644,7 +8644,7 @@[m
+       "faculty": "D. Nikitenko",[m
+       "credits": "0.75",[m
+       "academic_level": "Undergraduate",[m
+[31m-      "available": "2",[m
+[32m+[m[32m      "available": "3",[m
+       "capacity": "19",[m
+       "code": {[m
+         "type": "CIS",[m
+[36m@@ -8950,7 +8950,7 @@[m
+       "faculty": "D. Stacey",[m
+       "credits": "0.50",[m
+       "academic_level": "Undergraduate",[m
+[31m-      "available": "5",[m
+[32m+[m[32m      "available": "6",[m
+       "capacity": "44",[m
+       "code": {[m
+         "type": "CIS",[m
+[36m@@ -9171,7 +9171,7 @@[m
+       "faculty": "F. Wang",[m
+       "credits": "0.50",[m
+       "academic_level": "Undergraduate",[m
+[31m-      "available": "2",[m
+[32m+[m[32m      "available": "3",[m
+       "capacity": "52",[m
+       "code": {[m
+         "type": "CIS",[m
+[36m@@ -9188,7 +9188,7 @@[m
+       "faculty": "F. Wang",[m
+       "credits": "0.50",[m
+       "academic_level": "Undergraduate",[m
+[31m-      "available": "4",[m
+[32m+[m[32m      "available": "5",[m
+       "capacity": "52",[m
+       "code": {[m
+         "type": "CIS",[m
+[36m@@ -9970,7 +9970,7 @@[m
+       "faculty": "E. Adomait",[m
+       "credits": "0.50",[m
+       "academic_level": "Undergraduate",[m
+[31m-      "available": "3",[m
+[32m+[m[32m      "available": "4",[m
+       "capacity": "300",[m
+       "code": {[m
+         "type": "ECON",[m
+[36m@@ -10038,7 +10038,7 @@[m
+       "faculty": "TBA TBA",[m
+       "credits": "0.50",[m
+       "academic_level": "Undergraduate",[m
+[31m-      "available": "31",[m
+[32m+[m[32m      "available": "32",[m
+       "capacity": "160",[m
+       "code": {[m
+         "type": "ECON",[m
+[36m@@ -11815,7 +11815,7 @@[m
+       }[m
+     },[m
+     {[m
+[31m-      "status": "Closed",[m
+[32m+[m[32m      "status": "Open",[m
+       "title": "ENGG*3130*0101 (5501) Modelling Complex Systems",[m
+       "term": "Winter 2021",[m
+       "location": "Guelph",[m
+[36m@@ -11823,7 +11823,7 @@[m
+       "faculty": "G. Taylor",[m
+       "credits": "0.50",[m
+       "academic_level": "Undergraduate",[m
+[31m-      "available": "0",[m
+[32m+[m[32m      "available": "2",[m
+       "capacity": "44",[m
+       "code": {[m
+         "type": "ENGG",[m
+[36m@@ -12044,7 +12044,7 @@[m
+       "faculty": "S. Moussa",[m
+       "credits": "0.50",[m
+       "academic_level": "Undergraduate",[m
+[31m-      "available": "29",[m
+[32m+[m[32m      "available": "30",[m
+       "capacity": "60",[m
+       "code": {[m
+         "type": "ENGG",[m
+[36m@@ -14315,579 +14315,1837 @@[m
+     },[m
+     {[m
+       "status": "Open",[m
+[31m-      "title": "ENGG*6580*01 (5640) Advanced Control Systems",[m
+[32m+[m[32m      "title": "ENGG*6580*01 (5640) Advanced Control Systems",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Wed\n02:30PM - 05:20PM\nAD-S, Room Virtual",[m
+[32m+[m[32m      "faculty": "S. Yang",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Graduate",[m
+[32m+[m[32m      "available": "13",[m
+[32m+[m[32m      "capacity": "25",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGG",[m
+[32m+[m[32m        "number": "6580",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENGG*6590*01 (5641) Final Project in ES&C",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Days TBA\nTimes TBA\nRoom TBA",[m
+[32m+[m[32m      "faculty": "TBA TBA",[m
+[32m+[m[32m      "credits": "1.00",[m
+[32m+[m[32m      "academic_level": "Graduate",[m
+[32m+[m[32m      "available": "24",[m
+[32m+[m[32m      "capacity": "25",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGG",[m
+[32m+[m[32m        "number": "6590",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENGG*6600*01 (5642) Special Topics in ES&C",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Fri\n02:30PM - 03:50PM\nAD-S, Room Virtual",[m
+[32m+[m[32m      "faculty": "R. Muresan",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Graduate",[m
+[32m+[m[32m      "available": "1",[m
+[32m+[m[32m      "capacity": "10",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGG",[m
+[32m+[m[32m        "number": "6600",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENGG*6900*01 (5643) Project: Water Resources Eng",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Days TBA\nTimes TBA\nRoom TBA",[m
+[32m+[m[32m      "faculty": "TBA TBA",[m
+[32m+[m[32m      "credits": "1.00",[m
+[32m+[m[32m      "academic_level": "Graduate",[m
+[32m+[m[32m      "available": "24",[m
+[32m+[m[32m      "capacity": "25",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGG",[m
+[32m+[m[32m        "number": "6900",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENGG*6950*01 (5644) Project: Environmental Eng",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Days TBA\nTimes TBA\nRoom TBA",[m
+[32m+[m[32m      "faculty": "TBA TBA",[m
+[32m+[m[32m      "credits": "1.00",[m
+[32m+[m[32m      "academic_level": "Graduate",[m
+[32m+[m[32m      "available": "21",[m
+[32m+[m[32m      "capacity": "25",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGG",[m
+[32m+[m[32m        "number": "6950",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENGG*6990*01 (5645) Final Project Computer Eng",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Days TBA\nTimes TBA\nRoom TBA",[m
+[32m+[m[32m      "faculty": "TBA TBA",[m
+[32m+[m[32m      "credits": "1.00",[m
+[32m+[m[32m      "academic_level": "Graduate",[m
+[32m+[m[32m      "available": "24",[m
+[32m+[m[32m      "capacity": "25",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGG",[m
+[32m+[m[32m        "number": "6990",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Closed",[m
+[32m+[m[32m      "title": "ENGL*1080*0101 (5646) Reading the Past",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Wed\n11:30AM - 12:20PM\nAD-S, Room Virtual\nSEM Fri\n11:30AM - 12:20PM\nAD-S, Room Virtual",[m
+[32m+[m[32m      "faculty": "D. Moore",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "0",[m
+[32m+[m[32m      "capacity": "25",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "1080",[m
+[32m+[m[32m        "section": "0101"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Closed",[m
+[32m+[m[32m      "title": "ENGL*1080*0102 (5647) Reading the Past",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Wed\n11:30AM - 12:20PM\nAD-S, Room Virtual\nSEM Fri\n11:30AM - 12:20PM\nAD-S, Room Virtual",[m
+[32m+[m[32m      "faculty": "D. Moore",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "0",[m
+[32m+[m[32m      "capacity": "25",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "1080",[m
+[32m+[m[32m        "section": "0102"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENGL*1200*DE01 (5649) Reading the Contemporary World",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "Distance Education Days TBA\nTimes TBA\nRoom TBA",[m
+[32m+[m[32m      "faculty": "G. Campbell",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "40",[m
+[32m+[m[32m      "capacity": "150",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "1200",[m
+[32m+[m[32m        "section": "DE01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENGL*1500*01 (5650) Medicine & Literature",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Tues, Thur\n10:00AM - 11:20AM\nAD-S, Room Virtual",[m
+[32m+[m[32m      "faculty": "S. Singer",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "10",[m
+[32m+[m[32m      "capacity": "120",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "1500",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENGL*2080*0101 (5651) Finding a Critical Voice",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Wed\n11:30AM - 12:20PM\nAD-S, Room Virtual\nSEM Fri\n11:30AM - 12:20PM\nAD-S, Room Virtual\nEXAM Thur\n08:30AM - 10:30AM (2021/04/22)\nRoom TBA",[m
+[32m+[m[32m      "faculty": "L. Allin",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "2",[m
+[32m+[m[32m      "capacity": "25",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "2080",[m
+[32m+[m[32m        "section": "0101"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENGL*2080*0102 (5652) Finding a Critical Voice",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Wed\n11:30AM - 12:20PM\nAD-S, Room Virtual\nSEM Fri\n11:30AM - 12:20PM\nAD-S, Room Virtual\nEXAM Thur\n08:30AM - 10:30AM (2021/04/22)\nRoom TBA",[m
+[32m+[m[32m      "faculty": "L. Allin",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "3",[m
+[32m+[m[32m      "capacity": "25",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "2080",[m
+[32m+[m[32m        "section": "0102"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENGL*2080*0103 (5653) Finding a Critical Voice",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Wed\n11:30AM - 12:20PM\nAD-S, Room Virtual\nSEM Fri\n11:30AM - 12:20PM\nAD-S, Room Virtual\nEXAM Thur\n08:30AM - 10:30AM (2021/04/22)\nRoom TBA",[m
+[32m+[m[32m      "faculty": "L. Allin",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "7",[m
+[32m+[m[32m      "capacity": "25",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "2080",[m
+[32m+[m[32m        "section": "0103"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENGL*2120*01 (5654) Seminar: Critical Practices",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Wed\n02:30PM - 03:50PM\nAD-S, Room Virtual\nEXAM Wed\n11:30AM - 01:30PM (2021/04/21)\nRoom TBA",[m
+[32m+[m[32m      "faculty": "G. Campbell",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "12",[m
+[32m+[m[32m      "capacity": "25",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "2120",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENGL*2120*02 (5655) Seminar: Critical Practices",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Tues, Thur\n02:30PM - 03:50PM\nAD-S, Room Virtual\nEXAM Wed\n11:30AM - 01:30PM (2021/04/21)\nRoom TBA",[m
+[32m+[m[32m      "faculty": "J. Struthers",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "12",[m
+[32m+[m[32m      "capacity": "25",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "2120",[m
+[32m+[m[32m        "section": "02"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENGL*2130*01 (5656) Literature and Social Change",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Tues, Thur\n01:00PM - 02:20PM\nAD-S, Room Virtual",[m
+[32m+[m[32m      "faculty": "S. Singer",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "4",[m
+[32m+[m[32m      "capacity": "25",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "2130",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENGL*2130*02 (5657) Literature and Social Change",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Wed\n10:00AM - 11:20AM\nAD-S, Room Virtual",[m
+[32m+[m[32m      "faculty": "P. Ramirez",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "14",[m
+[32m+[m[32m      "capacity": "25",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "2130",[m
+[32m+[m[32m        "section": "02"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENGL*2260*01 (5658) Law and Literature",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Tues, Thur\n11:30AM - 12:50PM\nAD-S, Room Virtual",[m
+[32m+[m[32m      "faculty": "M. Fortier",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "19",[m
+[32m+[m[32m      "capacity": "100",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "2260",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENGL*2740*DE01 (5659) Children's Literature",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "Distance Education Days TBA\nTimes TBA\nRoom TBA",[m
+[32m+[m[32m      "faculty": "J. Schacker",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "10",[m
+[32m+[m[32m      "capacity": "100",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "2740",[m
+[32m+[m[32m        "section": "DE01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Closed",[m
+[32m+[m[32m      "title": "ENGL*2920*01 (5660) Elements of Creative Writing",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Wed\n04:00PM - 05:20PM\nAD-S, Room Virtual\nEXAM Sat\n07:00PM - 09:00PM (2021/04/17)\nRoom TBA",[m
+[32m+[m[32m      "faculty": "A. Tang",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "0",[m
+[32m+[m[32m      "capacity": "35",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "2920",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENGL*2920*02 (7327) Elements of Creative Writing",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Wed\n04:00PM - 05:20PM\nAD-S, Room VIRTUAL",[m
+[32m+[m[32m      "faculty": "S. Selvadurai",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "1",[m
+[32m+[m[32m      "capacity": "35",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "2920",[m
+[32m+[m[32m        "section": "02"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENGL*3050*01 (5661) Intermediate Fiction Writing",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Mon\n11:30AM - 02:20PM\nAD-S, Room Virtual",[m
+[32m+[m[32m      "faculty": "D. Brand",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "2",[m
+[32m+[m[32m      "capacity": "20",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "3050",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Closed",[m
+[32m+[m[32m      "title": "ENGL*3070*01 (5662) Intermediate Screenwriting",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Tues\n02:30PM - 05:20PM\nAD-S, Room Virtual",[m
+[32m+[m[32m      "faculty": "E. Chang",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "0",[m
+[32m+[m[32m      "capacity": "20",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "3070",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENGL*3240*01 (5663) Early Modern Literature",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Wed\n01:00PM - 02:20PM\nAD-S, Room Virtual",[m
+[32m+[m[32m      "faculty": "P. Kuling",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "4",[m
+[32m+[m[32m      "capacity": "75",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "3240",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENGL*3540*01 (5664) Forging the U.S. Nation",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Wed\n04:00PM - 05:20PM\nAD-S, Room Virtual",[m
+[32m+[m[32m      "faculty": "P. Ramirez",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "6",[m
+[32m+[m[32m      "capacity": "100",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "3540",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Closed",[m
+[32m+[m[32m      "title": "ENGL*3870*01 (7339) Literary and Cultural Studies",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Days TBA\nTimes TBA\nRoom TBA",[m
+[32m+[m[32m      "faculty": "T. Graham",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "0",[m
+[32m+[m[32m      "capacity": "1",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "3870",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Closed",[m
+[32m+[m[32m      "title": "ENGL*3870*02 (7434) Literary and Cultural Studies",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Days TBA\nTimes TBA\nRoom TBA",[m
+[32m+[m[32m      "faculty": "P. Ramirez",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "0",[m
+[32m+[m[32m      "capacity": "1",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "3870",[m
+[32m+[m[32m        "section": "02"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Closed",[m
+[32m+[m[32m      "title": "ENGL*3880*01 (7271) Literary and Cultural Studies",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Days TBA\nTimes TBA\nRoom TBA",[m
+[32m+[m[32m      "faculty": "E. Chang",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "0",[m
+[32m+[m[32m      "capacity": "2",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "3880",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENGL*3940*01 (5665) Form, Genre & Literary Value",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Tues, Thur\n10:00AM - 11:20AM\nAD-S, Room Virtual\nEXAM Fri\n02:30PM - 04:30PM (2021/04/23)\nRoom TBA",[m
+[32m+[m[32m      "faculty": "J. Struthers",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "9",[m
+[32m+[m[32m      "capacity": "25",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "3940",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Closed",[m
+[32m+[m[32m      "title": "ENGL*3940*02 (5666) Form, Genre & Literary Value",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Wed\n02:30PM - 03:50PM\nAD-S, Room Virtual\nEXAM Fri\n02:30PM - 04:30PM (2021/04/23)\nRoom TBA",[m
+[32m+[m[32m      "faculty": "P. Salmon",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "0",[m
+[32m+[m[32m      "capacity": "0",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "3940",[m
+[32m+[m[32m        "section": "02"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENGL*3960*01 (5667) Literature in History",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Wed\n04:00PM - 05:20PM\nAD-S, Room Virtual\nEXAM Sat\n02:30PM - 04:30PM (2021/04/24)\nRoom TBA",[m
+[32m+[m[32m      "faculty": "T. Graham",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "4",[m
+[32m+[m[32m      "capacity": "25",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "3960",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENGL*3960*02 (5668) Literature in History",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Tues, Thur\n11:30AM - 12:50PM\nAD-S, Room Virtual",[m
+[32m+[m[32m      "faculty": "E. Chang",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "1",[m
+[32m+[m[32m      "capacity": "20",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "3960",[m
+[32m+[m[32m        "section": "02"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENGL*4240*01 (5669) Medieval & Early Modern Lit",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Tues\n02:30PM - 05:20PM\nAD-S, Room Virtual",[m
+[32m+[m[32m      "faculty": "M. Fortier",[m
+[32m+[m[32m      "credits": "1.00",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "1",[m
+[32m+[m[32m      "capacity": "6",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "4240",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Closed",[m
+[32m+[m[32m      "title": "ENGL*4250*01 (5670) 18th- & 19th-c Literatures",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Mon\n02:30PM - 05:20PM\nAD-S, Room Virtual\nEXAM Tues\n02:30PM - 04:30PM (2021/04/20)\nRoom TBA",[m
+[32m+[m[32m      "faculty": "S. Brown",[m
+[32m+[m[32m      "credits": "1.00",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "0",[m
+[32m+[m[32m      "capacity": "6",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "4250",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENGL*4270*01 (5671) United States Literatures",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Wed\n01:00PM - 02:20PM\nAD-S, Room Virtual\nEXAM Tues\n11:30AM - 01:30PM (2021/04/20)\nRoom TBA",[m
+[32m+[m[32m      "faculty": "G. Campbell",[m
+[32m+[m[32m      "credits": "1.00",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "10",[m
+[32m+[m[32m      "capacity": "20",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "4270",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Closed",[m
+[32m+[m[32m      "title": "ENGL*4310*01 (7373) Special Studies in English",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Days TBA\nTimes TBA\nRoom TBA",[m
+[32m+[m[32m      "faculty": "D. O'Quinn",[m
+[32m+[m[32m      "credits": "1.00",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "0",[m
+[32m+[m[32m      "capacity": "1",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "4310",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Closed",[m
+[32m+[m[32m      "title": "ENGL*4720*01 (5672) Creative Writing: Prose/Poetry",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Tues\n02:30PM - 05:20PM\nAD-S, Room Virtual",[m
+[32m+[m[32m      "faculty": "R. Enright",[m
+[32m+[m[32m      "credits": "1.00",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "0",[m
+[32m+[m[32m      "capacity": "20",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "4720",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Closed",[m
+[32m+[m[32m      "title": "ENGL*4810*01 (7435) Directed Reading",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Days TBA\nTimes TBA\nRoom TBA",[m
+[32m+[m[32m      "faculty": "J. Cairnie",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "0",[m
+[32m+[m[32m      "capacity": "1",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "4810",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Closed",[m
+[32m+[m[32m      "title": "ENGL*4910*01 (7259) Honours English Essay",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Days TBA\nTimes TBA\nRoom TBA",[m
+[32m+[m[32m      "faculty": "J. Cairnie",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "0",[m
+[32m+[m[32m      "capacity": "2",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "4910",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Closed",[m
+[32m+[m[32m      "title": "ENGL*4910*02 (7426) Honours English Essay",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Days TBA\nTimes TBA\nRoom TBA",[m
+[32m+[m[32m      "faculty": "J. Struthers",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "0",[m
+[32m+[m[32m      "capacity": "1",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "4910",[m
+[32m+[m[32m        "section": "02"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Closed",[m
+[32m+[m[32m      "title": "ENGL*4910*03 (7427) Honours English Essay",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Days TBA\nTimes TBA\nRoom TBA",[m
+[32m+[m[32m      "faculty": "J. Struthers",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "0",[m
+[32m+[m[32m      "capacity": "1",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "4910",[m
+[32m+[m[32m        "section": "03"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENGL*6003*01 (5673) Problems of Literary Analysis",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Wed\n02:30PM - 05:20PM\nAD-S, Room Virtual",[m
+[32m+[m[32m      "faculty": "J. Cairnie",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Graduate",[m
+[32m+[m[32m      "available": "8",[m
+[32m+[m[32m      "capacity": "15",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "6003",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENGL*6201*01 (5674) Topics in Canadian Literature",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Thur\n02:30PM - 05:20PM\nAD-S, Room Virtual",[m
+[32m+[m[32m      "faculty": "P. Barrett",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Graduate",[m
+[32m+[m[32m      "available": "2",[m
+[32m+[m[32m      "capacity": "15",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "6201",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Closed",[m
+[32m+[m[32m      "title": "ENGL*6412*01 (5675) Medieval/Renaissance Literatur",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Tues\n02:30PM - 05:20PM\nAD-S, Room Virtual",[m
+[32m+[m[32m      "faculty": "M. Fortier",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Graduate",[m
+[32m+[m[32m      "available": "0",[m
+[32m+[m[32m      "capacity": "9",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "6412",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENGL*6431*01 (5676) 19th-Century Literature",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Mon\n02:30PM - 05:20PM\nAD-S, Room Virtual",[m
+[32m+[m[32m      "faculty": "S. Brown",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Graduate",[m
+[32m+[m[32m      "available": "6",[m
+[32m+[m[32m      "capacity": "15",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "6431",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Closed",[m
+[32m+[m[32m      "title": "ENGL*6801*01 (7285) Reading Course I",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Days TBA\nTimes TBA\nRoom TBA",[m
+[32m+[m[32m      "faculty": "J. Schacker",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Graduate",[m
+[32m+[m[32m      "available": "0",[m
+[32m+[m[32m      "capacity": "1",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "6801",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Closed",[m
+[32m+[m[32m      "title": "ENGL*6801*02 (7286) Reading Course I",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Days TBA\nTimes TBA\nRoom TBA",[m
+[32m+[m[32m      "faculty": "E. Chang",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Graduate",[m
+[32m+[m[32m      "available": "0",[m
+[32m+[m[32m      "capacity": "1",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "6801",[m
+[32m+[m[32m        "section": "02"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Closed",[m
+[32m+[m[32m      "title": "ENGL*6801*03 (7375) Reading Course I",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Days TBA\nTimes TBA\nRoom TBA",[m
+[32m+[m[32m      "faculty": "J. Walsh",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Graduate",[m
+[32m+[m[32m      "available": "0",[m
+[32m+[m[32m      "capacity": "1",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "6801",[m
+[32m+[m[32m        "section": "03"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Closed",[m
+[32m+[m[32m      "title": "ENGL*6801*04 (7376) Reading Course I",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Days TBA\nTimes TBA\nRoom TBA",[m
+[32m+[m[32m      "faculty": "M. Lipton",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Graduate",[m
+[32m+[m[32m      "available": "0",[m
+[32m+[m[32m      "capacity": "1",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "6801",[m
+[32m+[m[32m        "section": "04"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Closed",[m
+[32m+[m[32m      "title": "ENGL*6801*05 (7398) Reading Course I",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Days TBA\nTimes TBA\nRoom TBA",[m
+[32m+[m[32m      "faculty": "T. Sasso",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Graduate",[m
+[32m+[m[32m      "available": "0",[m
+[32m+[m[32m      "capacity": "1",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "6801",[m
+[32m+[m[32m        "section": "05"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Closed",[m
+[32m+[m[32m      "title": "ENGL*6801*06 (7437) Reading Course I",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Days TBA\nTimes TBA\nRoom TBA",[m
+[32m+[m[32m      "faculty": "D. O'Quinn",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Graduate",[m
+[32m+[m[32m      "available": "0",[m
+[32m+[m[32m      "capacity": "1",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENGL",[m
+[32m+[m[32m        "number": "6801",[m
+[32m+[m[32m        "section": "06"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENVM*3500*0101 (5677) Env. Management Int. Project",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Wed\n01:00PM - 02:20PM\nAD-S, Room Virtual\nSEM Wed\n08:30AM - 09:20AM\nAD-S, Room Virtual",[m
+[32m+[m[32m      "faculty": "S. Haerri",[m
+[32m+[m[32m      "credits": "1.00",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "19",[m
+[32m+[m[32m      "capacity": "40",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENVM",[m
+[32m+[m[32m        "number": "3500",[m
+[32m+[m[32m        "section": "0101"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENVS*1060*DE01 (5678) Principles of Geology",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "Distance Education Days TBA\nTimes TBA\nRoom TBA\nEXAM Mon\n07:00PM - 09:00PM (2021/04/19)\nRoom TBA",[m
+[32m+[m[32m      "faculty": "A. Brown",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "24",[m
+[32m+[m[32m      "capacity": "150",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "1060",[m
+[32m+[m[32m        "section": "DE01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENVS*2040*01 (5679) Plant Health & the Environment",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Tues, Thur\n05:30PM - 06:50PM\nAD-S, Room Virtual\nEXAM Sat\n08:30AM - 10:30AM (2021/04/24)\nRoom TBA",[m
+[32m+[m[32m      "faculty": "C. Sopher",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "4",[m
+[32m+[m[32m      "capacity": "180",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "2040",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Closed",[m
+[32m+[m[32m      "title": "ENVS*2080*0101 (5680) Intro. Env. Microbiology",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Wed, Fri\n04:30PM - 05:20PM\nAD-S, Room Virtual\nLAB Thur\n02:30PM - 05:20PM\nAD-S, Room Virtual\nEXAM Fri\n11:30AM - 01:30PM (2021/04/23)\nRoom TBA",[m
+[32m+[m[32m      "faculty": "J. Goordial",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "0",[m
+[32m+[m[32m      "capacity": "25",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "2080",[m
+[32m+[m[32m        "section": "0101"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Closed",[m
+[32m+[m[32m      "title": "ENVS*2080*0102 (5681) Intro. Env. Microbiology",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Wed, Fri\n04:30PM - 05:20PM\nAD-S, Room Virtual\nLAB Thur\n02:30PM - 05:20PM\nAD-S, Room Virtual\nEXAM Fri\n11:30AM - 01:30PM (2021/04/23)\nRoom TBA",[m
+[32m+[m[32m      "faculty": "J. Goordial",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "0",[m
+[32m+[m[32m      "capacity": "25",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "2080",[m
+[32m+[m[32m        "section": "0102"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENVS*2080*0103 (5682) Intro. Env. Microbiology",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Wed, Fri\n04:30PM - 05:20PM\nAD-S, Room Virtual\nLAB Thur\n08:30AM - 11:20AM\nAD-S, Room Virtual\nEXAM Fri\n11:30AM - 01:30PM (2021/04/23)\nRoom TBA",[m
+[32m+[m[32m      "faculty": "J. Goordial",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "3",[m
+[32m+[m[32m      "capacity": "25",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "2080",[m
+[32m+[m[32m        "section": "0103"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENVS*2080*0104 (5683) Intro. Env. Microbiology",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Wed, Fri\n04:30PM - 05:20PM\nAD-S, Room Virtual\nLAB Mon\n08:30AM - 11:20AM\nAD-S, Room Virtual\nEXAM Fri\n11:30AM - 01:30PM (2021/04/23)\nRoom TBA",[m
+[32m+[m[32m      "faculty": "J. Goordial",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "9",[m
+[32m+[m[32m      "capacity": "25",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "2080",[m
+[32m+[m[32m        "section": "0104"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENVS*2090*01 (7260) Problem Solving Environ Biol",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Wed, Fri\n08:30AM - 09:20AM\nAD-S, Room VIRTUAL",[m
+[32m+[m[32m      "faculty": "M. Habash",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "11",[m
+[32m+[m[32m      "capacity": "20",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "2090",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENVS*2130*DE01 (5684) Eating Sustainably in Ontario",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "Distance Education Days TBA\nTimes TBA\nRoom TBA\nEXAM Wed\n11:30AM - 01:30PM (2021/04/21)\nRoom TBA",[m
+[32m+[m[32m      "faculty": "K. Bolton",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "2",[m
+[32m+[m[32m      "capacity": "120",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "2130",[m
+[32m+[m[32m        "section": "DE01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENVS*2210*DE01 (5685) Apiculture & Honey Bee Biology",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "Distance Education Days TBA\nTimes TBA\nRoom TBA\nEXAM Tues\n02:30PM - 04:30PM (2021/04/27)\nRoom TBA",[m
+[32m+[m[32m      "faculty": "N. Morfin Ramirez",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "3",[m
+[32m+[m[32m      "capacity": "300",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "2210",[m
+[32m+[m[32m        "section": "DE01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENVS*2230*0101 (5686) Communications in Environ.",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Wed\n10:30AM - 11:20AM\nAD-S, Room Virtual\nSEM Thur\n02:30PM - 05:20PM\nAD-S, Room Virtual",[m
+[32m+[m[32m      "faculty": "S. Haerri",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "35",[m
+[32m+[m[32m      "capacity": "50",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "2230",[m
+[32m+[m[32m        "section": "0101"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENVS*2250*DE01 (5687) Geology of Natural Disasters",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "Distance Education Days TBA\nTimes TBA\nRoom TBA\nEXAM Mon\n08:30AM - 10:30AM (2021/04/26)\nRoom TBA",[m
+[32m+[m[32m      "faculty": "A. Brown",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "23",[m
+[32m+[m[32m      "capacity": "75",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "2250",[m
+[32m+[m[32m        "section": "DE01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENVS*2270*DE01 (5688) Impacts of Climate Change",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "Distance Education Days TBA\nTimes TBA\nRoom TBA\nEXAM Sat\n11:30AM - 01:30PM (2021/04/17)\nRoom TBA",[m
+[32m+[m[32m      "faculty": "K. Bolton",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "2",[m
+[32m+[m[32m      "capacity": "120",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "2270",[m
+[32m+[m[32m        "section": "DE01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENVS*2310*0101 (5689) Intro to Biogeochemistry",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Wed\n03:30PM - 04:20PM\nAD-S, Room Virtual\nSEM Mon\n12:30PM - 02:20PM\nAD-S, Room Virtual\nEXAM Mon\n07:00PM - 09:00PM (2021/04/26)\nRoom TBA",[m
+[32m+[m[32m      "faculty": "S. Glasauer",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "2",[m
+[32m+[m[32m      "capacity": "50",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "2310",[m
+[32m+[m[32m        "section": "0101"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENVS*3000*DE01 (5690) Nature Interpretation",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "Distance Education Days TBA\nTimes TBA\nRoom TBA",[m
+[32m+[m[32m      "faculty": "A. Hooykaas",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "7",[m
+[32m+[m[32m      "capacity": "75",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "3000",[m
+[32m+[m[32m        "section": "DE01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Closed",[m
+[32m+[m[32m      "title": "ENVS*3020*01 (5691) Pesticides and the Environment",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Wed, Fri\n01:30PM - 02:20PM\nAD-S, Room Virtual",[m
+[32m+[m[32m      "faculty": "R. Prosser",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "0",[m
+[32m+[m[32m      "capacity": "80",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "3020",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENVS*3050*01 (5692) Microclimatology",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Wed, Fri\n12:30PM - 01:20PM\nAD-S, Room Virtual\nEXAM Thur\n02:30PM - 04:30PM (2021/04/22)\nRoom TBA",[m
+[32m+[m[32m      "faculty": "C. Wagner Riddle",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "39",[m
+[32m+[m[32m      "capacity": "50",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "3050",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENVS*3060*01 (5693) Groundwater",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Wed, Fri\n11:30AM - 12:20PM\nAD-S, Room Virtual\nEXAM Thur\n02:30PM - 04:30PM (2021/04/22)\nRoom TBA",[m
+[32m+[m[32m      "faculty": "A. Biswas",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "58",[m
+[32m+[m[32m      "capacity": "100",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "3060",[m
+[32m+[m[32m        "section": "01"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENVS*3090*0101 (5694) Insect Diversity & Biology",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Tues, Thur\n11:30AM - 12:50PM\nAD-S, Room Virtual\nLAB Tues\n02:30PM - 05:20PM\nAD-S, Room Virtual",[m
+[32m+[m[32m      "faculty": "A. Young",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "1",[m
+[32m+[m[32m      "capacity": "30",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "3090",[m
+[32m+[m[32m        "section": "0101"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENVS*3090*0102 (5695) Insect Diversity & Biology",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Tues, Thur\n11:30AM - 12:50PM\nAD-S, Room Virtual\nLAB Tues\n07:00PM - 09:50PM\nAD-S, Room Virtual",[m
+[32m+[m[32m      "faculty": "A. Young",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "3",[m
+[32m+[m[32m      "capacity": "30",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "3090",[m
+[32m+[m[32m        "section": "0102"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENVS*3150*0101 (5696) Aquatic Systems",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Tues, Thur\n01:00PM - 02:20PM\nAD-S, Room Virtual\nLAB Wed\n03:30PM - 05:20PM\nAD-S, Room Virtual\nEXAM Tues\n02:30PM - 04:30PM (2021/04/20)\nRoom TBA",[m
+[32m+[m[32m      "faculty": "P. Sibley",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "2",[m
+[32m+[m[32m      "capacity": "20",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "3150",[m
+[32m+[m[32m        "section": "0101"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENVS*3150*0102 (5697) Aquatic Systems",[m
+[32m+[m[32m      "term": "Winter 2021",[m
+[32m+[m[32m      "location": "Guelph",[m
+[32m+[m[32m      "meeting_info": "LEC Tues, Thur\n01:00PM - 02:20PM\nAD-S, Room Virtual\nLAB Fri\n02:30PM - 04:20PM\nAD-S, Room Virtual\nEXAM Tues\n02:30PM - 04:30PM (2021/04/20)\nRoom TBA",[m
+[32m+[m[32m      "faculty": "P. Sibley",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "2",[m
+[32m+[m[32m      "capacity": "20",[m
+[32m+[m[32m      "code": {[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "3150",[m
+[32m+[m[32m        "section": "0102"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENVS*3270*0101 (5698) Forest Biodiversity",[m
+       "term": "Winter 2021",[m
+       "location": "Guelph",[m
+[31m-      "meeting_info": "LEC Wed\n02:30PM - 05:20PM\nAD-S, Room Virtual",[m
+[31m-      "faculty": "S. Yang",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Wed\n05:30PM - 06:50PM\nAD-S, Room Virtual\nSEM Mon\n02:30PM - 05:20PM\nAD-S, Room Virtual\nEXAM Wed\n08:30AM - 10:30AM (2021/04/21)\nRoom TBA",[m
+[32m+[m[32m      "faculty": "S. Hunt",[m
+       "credits": "0.50",[m
+[31m-      "academic_level": "Graduate",[m
+[31m-      "available": "13",[m
+[31m-      "capacity": "25",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "1",[m
+[32m+[m[32m      "capacity": "30",[m
+       "code": {[m
+[31m-        "type": "ENGG",[m
+[31m-        "number": "6580",[m
+[31m-        "section": "01"[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "3270",[m
+[32m+[m[32m        "section": "0101"[m
+       }[m
+     },[m
+     {[m
+[31m-      "status": "Open",[m
+[31m-      "title": "ENGG*6590*01 (5641) Final Project in ES&C",[m
+[32m+[m[32m      "status": "Closed",[m
+[32m+[m[32m      "title": "ENVS*3270*0102 (5699) Forest Biodiversity",[m
+       "term": "Winter 2021",[m
+       "location": "Guelph",[m
+[31m-      "meeting_info": "LEC Days TBA\nTimes TBA\nRoom TBA",[m
+[31m-      "faculty": "TBA TBA",[m
+[31m-      "credits": "1.00",[m
+[31m-      "academic_level": "Graduate",[m
+[31m-      "available": "24",[m
+[31m-      "capacity": "25",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Wed\n05:30PM - 06:50PM\nAD-S, Room Virtual\nSEM Thur\n02:30PM - 05:20PM\nAD-S, Room Virtual\nEXAM Wed\n08:30AM - 10:30AM (2021/04/21)\nRoom TBA",[m
+[32m+[m[32m      "faculty": "S. Hunt",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "0",[m
+[32m+[m[32m      "capacity": "30",[m
+       "code": {[m
+[31m-        "type": "ENGG",[m
+[31m-        "number": "6590",[m
+[31m-        "section": "01"[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "3270",[m
+[32m+[m[32m        "section": "0102"[m
+       }[m
+     },[m
+     {[m
+[31m-      "status": "Open",[m
+[31m-      "title": "ENGG*6600*01 (5642) Special Topics in ES&C",[m
+[32m+[m[32m      "status": "Closed",[m
+[32m+[m[32m      "title": "ENVS*3270*0103 (5700) Forest Biodiversity",[m
+       "term": "Winter 2021",[m
+       "location": "Guelph",[m
+[31m-      "meeting_info": "LEC Mon, Fri\n02:30PM - 03:50PM\nAD-S, Room Virtual",[m
+[31m-      "faculty": "R. Muresan",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Wed\n05:30PM - 06:50PM\nAD-S, Room Virtual\nSEM Wed\n07:00PM - 09:50PM\nAD-S, Room Virtual\nEXAM Wed\n08:30AM - 10:30AM (2021/04/21)\nRoom TBA",[m
+[32m+[m[32m      "faculty": "S. Hunt",[m
+       "credits": "0.50",[m
+[31m-      "academic_level": "Graduate",[m
+[31m-      "available": "1",[m
+[31m-      "capacity": "10",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "0",[m
+[32m+[m[32m      "capacity": "30",[m
+       "code": {[m
+[31m-        "type": "ENGG",[m
+[31m-        "number": "6600",[m
+[31m-        "section": "01"[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "3270",[m
+[32m+[m[32m        "section": "0103"[m
+       }[m
+     },[m
+     {[m
+[31m-      "status": "Open",[m
+[31m-      "title": "ENGG*6900*01 (5643) Project: Water Resources Eng",[m
+[32m+[m[32m      "status": "Closed",[m
+[32m+[m[32m      "title": "ENVS*3300*01 (5701) Intro to Controlled Env System",[m
+       "term": "Winter 2021",[m
+       "location": "Guelph",[m
+[31m-      "meeting_info": "LEC Days TBA\nTimes TBA\nRoom TBA",[m
+[31m-      "faculty": "TBA TBA",[m
+[31m-      "credits": "1.00",[m
+[31m-      "academic_level": "Graduate",[m
+[31m-      "available": "24",[m
+[31m-      "capacity": "25",[m
+[32m+[m[32m      "meeting_info": "LEC Tues, Thur\n10:00AM - 11:20AM\nAD-S, Room Virtual",[m
+[32m+[m[32m      "faculty": "M. Dixon, T. Graham",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "0",[m
+[32m+[m[32m      "capacity": "0",[m
+       "code": {[m
+[31m-        "type": "ENGG",[m
+[31m-        "number": "6900",[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "3300",[m
+         "section": "01"[m
+       }[m
+     },[m
+     {[m
+       "status": "Open",[m
+[31m-      "title": "ENGG*6950*01 (5644) Project: Environmental Eng",[m
+[32m+[m[32m      "title": "ENVS*3310*0101 (5702) Soil Biodiversity & Functions",[m
+       "term": "Winter 2021",[m
+       "location": "Guelph",[m
+[31m-      "meeting_info": "LEC Days TBA\nTimes TBA\nRoom TBA",[m
+[31m-      "faculty": "TBA TBA",[m
+[31m-      "credits": "1.00",[m
+[31m-      "academic_level": "Graduate",[m
+[31m-      "available": "21",[m
+[31m-      "capacity": "25",[m
+[32m+[m[32m      "meeting_info": "LEC Tues, Thur\n11:30AM - 12:50PM\nAD-S, Room Virtual\nSEM Thur\n02:30PM - 03:20PM\nAD-S, Room Virtual",[m
+[32m+[m[32m      "faculty": "A. Gillespie",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "9",[m
+[32m+[m[32m      "capacity": "35",[m
+       "code": {[m
+[31m-        "type": "ENGG",[m
+[31m-        "number": "6950",[m
+[31m-        "section": "01"[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "3310",[m
+[32m+[m[32m        "section": "0101"[m
+       }[m
+     },[m
+     {[m
+       "status": "Open",[m
+[31m-      "title": "ENGG*6990*01 (5645) Final Project Computer Eng",[m
+[32m+[m[32m      "title": "ENVS*3330*01 (7371) Env Flex Internship",[m
+       "term": "Winter 2021",[m
+       "location": "Guelph",[m
+[31m-      "meeting_info": "LEC Days TBA\nTimes TBA\nRoom TBA",[m
+[31m-      "faculty": "TBA TBA",[m
+[31m-      "credits": "1.00",[m
+[31m-      "academic_level": "Graduate",[m
+[31m-      "available": "24",[m
+[31m-      "capacity": "25",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Wed, Fri\n04:30PM - 05:20PM\nAD-S, Room VIRTUAL",[m
+[32m+[m[32m      "faculty": "D. Matovic, A. Brown",[m
+[32m+[m[32m      "credits": "0.50",[m
+[32m+[m[32m      "academic_level": "Undergraduate",[m
+[32m+[m[32m      "available": "20",[m
+[32m+[m[32m      "capacity": "30",[m
+       "code": {[m
+[31m-        "type": "ENGG",[m
+[31m-        "number": "6990",[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "3330",[m
+         "section": "01"[m
+       }[m
+     },[m
+     {[m
+[31m-      "status": "Closed",[m
+[31m-      "title": "ENGL*1080*0101 (5646) Reading the Past",[m
+[32m+[m[32m      "status": "Open",[m
+[32m+[m[32m      "title": "ENVS*3370*01 (5703) Terrestrial Ecosystem Ecology",[m
+       "term": "Winter 2021",[m
+       "location": "Guelph",[m
+[31m-      "meeting_info": "LEC Mon, Wed\n11:30AM - 12:20PM\nAD-S, Room Virtual\nSEM Fri\n11:30AM - 12:20PM\nAD-S, Room Virtual",[m
+[31m-      "faculty": "D. Moore",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Wed, Fri\n10:30AM - 11:20AM\nAD-S, Room Virtual\nEXAM Sat\n07:00PM - 09:00PM (2021/04/24)\nRoom TBA",[m
+[32m+[m[32m      "faculty": "S. Hunt",[m
+       "credits": "0.50",[m
+       "academic_level": "Undergraduate",[m
+[31m-      "available": "0",[m
+[31m-      "capacity": "25",[m
+[32m+[m[32m      "available": "7",[m
+[32m+[m[32m      "capacity": "65",[m
+       "code": {[m
+[31m-        "type": "ENGL",[m
+[31m-        "number": "1080",[m
+[31m-        "section": "0101"[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "3370",[m
+[32m+[m[32m        "section": "01"[m
+       }[m
+     },[m
+     {[m
+       "status": "Closed",[m
+[31m-      "title": "ENGL*1080*0102 (5647) Reading the Past",[m
+[32m+[m[32m      "title": "ENVS*4000*01 (5704) Tox Risk Assessment",[m
+       "term": "Winter 2021",[m
+       "location": "Guelph",[m
+[31m-      "meeting_info": "LEC Mon, Wed\n11:30AM - 12:20PM\nAD-S, Room Virtual\nSEM Fri\n11:30AM - 12:20PM\nAD-S, Room Virtual",[m
+[31m-      "faculty": "D. Moore",[m
+[32m+[m[32m      "meeting_info": "LEC Tues, Thur\n10:00AM - 11:20AM\nAD-S, Room Virtual",[m
+[32m+[m[32m      "faculty": "R. Prosser",[m
+       "credits": "0.50",[m
+       "academic_level": "Undergraduate",[m
+       "available": "0",[m
+[31m-      "capacity": "25",[m
+[32m+[m[32m      "capacity": "20",[m
+       "code": {[m
+[31m-        "type": "ENGL",[m
+[31m-        "number": "1080",[m
+[31m-        "section": "0102"[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "4000",[m
+[32m+[m[32m        "section": "01"[m
+       }[m
+     },[m
+     {[m
+       "status": "Open",[m
+[31m-      "title": "ENGL*1200*DE01 (5649) Reading the Contemporary World",[m
+[32m+[m[32m      "title": "ENVS*4002*01 (5705) Project in Enviro. Science",[m
+       "term": "Winter 2021",[m
+       "location": "Guelph",[m
+[31m-      "meeting_info": "Distance Education Days TBA\nTimes TBA\nRoom TBA",[m
+[31m-      "faculty": "G. Campbell",[m
+[32m+[m[32m      "meeting_info": "LAB Mon\n07:00PM - 09:50PM\nAD-S, Room Virtual",[m
+[32m+[m[32m      "faculty": "A. Gillespie, J. Longstaffe",[m
+       "credits": "0.50",[m
+       "academic_level": "Undergraduate",[m
+[31m-      "available": "40",[m
+[31m-      "capacity": "150",[m
+[32m+[m[32m      "available": "33",[m
+[32m+[m[32m      "capacity": "100",[m
+       "code": {[m
+[31m-        "type": "ENGL",[m
+[31m-        "number": "1200",[m
+[31m-        "section": "DE01"[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "4002",[m
+[32m+[m[32m        "section": "01"[m
+       }[m
+     },[m
+     {[m
+       "status": "Open",[m
+[31m-      "title": "ENGL*1500*01 (5650) Medicine & Literature",[m
+[32m+[m[32m      "title": "ENVS*4030*01 (5706) Ecohydrology",[m
+       "term": "Winter 2021",[m
+       "location": "Guelph",[m
+[31m-      "meeting_info": "LEC Tues, Thur\n10:00AM - 11:20AM\nAD-S, Room Virtual",[m
+[31m-      "faculty": "S. Singer",[m
+[32m+[m[32m      "meeting_info": "LEC Tues, Thur\n11:30AM - 12:50PM\nAD-S, Room Virtual\nEXAM Mon\n08:30AM - 10:30AM (2021/04/19)\nRoom TBA",[m
+[32m+[m[32m      "faculty": "G. Ali",[m
+       "credits": "0.50",[m
+       "academic_level": "Undergraduate",[m
+[31m-      "available": "10",[m
+[31m-      "capacity": "120",[m
+[32m+[m[32m      "available": "15",[m
+[32m+[m[32m      "capacity": "30",[m
+       "code": {[m
+[31m-        "type": "ENGL",[m
+[31m-        "number": "1500",[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "4030",[m
+         "section": "01"[m
+       }[m
+     },[m
+     {[m
+[31m-      "status": "Open",[m
+[31m-      "title": "ENGL*2080*0101 (5651) Finding a Critical Voice",[m
+[32m+[m[32m      "status": "Closed",[m
+[32m+[m[32m      "title": "ENVS*4100*0101 (5707) Integ Mgmt of Inv Insect Pests",[m
+       "term": "Winter 2021",[m
+       "location": "Guelph",[m
+[31m-      "meeting_info": "LEC Mon, Wed\n11:30AM - 12:20PM\nAD-S, Room Virtual\nSEM Fri\n11:30AM - 12:20PM\nAD-S, Room Virtual\nEXAM Thur\n08:30AM - 10:30AM (2021/04/22)\nRoom TBA",[m
+[31m-      "faculty": "L. Allin",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Wed, Fri\n09:30AM - 10:20AM\nAD-S, Room Virtual\nLAB Fri\n02:30PM - 05:20PM\nAD-S, Room Virtual",[m
+[32m+[m[32m      "faculty": "A. Gradish",[m
+       "credits": "0.50",[m
+       "academic_level": "Undergraduate",[m
+[31m-      "available": "2",[m
+[31m-      "capacity": "25",[m
+[32m+[m[32m      "available": "0",[m
+[32m+[m[32m      "capacity": "26",[m
+       "code": {[m
+[31m-        "type": "ENGL",[m
+[31m-        "number": "2080",[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "4100",[m
+         "section": "0101"[m
+       }[m
+     },[m
+     {[m
+       "status": "Open",[m
+[31m-      "title": "ENGL*2080*0102 (5652) Finding a Critical Voice",[m
+[32m+[m[32m      "title": "ENVS*4180*01 (5708) Bioactivity of Insecticides",[m
+       "term": "Winter 2021",[m
+       "location": "Guelph",[m
+[31m-      "meeting_info": "LEC Mon, Wed\n11:30AM - 12:20PM\nAD-S, Room Virtual\nSEM Fri\n11:30AM - 12:20PM\nAD-S, Room Virtual\nEXAM Thur\n08:30AM - 10:30AM (2021/04/22)\nRoom TBA",[m
+[31m-      "faculty": "L. Allin",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Wed, Fri\n08:30AM - 09:20AM\nAD-S, Room Virtual",[m
+[32m+[m[32m      "faculty": "A. Fairweather",[m
+       "credits": "0.50",[m
+       "academic_level": "Undergraduate",[m
+[31m-      "available": "3",[m
+[31m-      "capacity": "25",[m
+[32m+[m[32m      "available": "8",[m
+[32m+[m[32m      "capacity": "35",[m
+       "code": {[m
+[31m-        "type": "ENGL",[m
+[31m-        "number": "2080",[m
+[31m-        "section": "0102"[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "4180",[m
+[32m+[m[32m        "section": "01"[m
+       }[m
+     },[m
+     {[m
+       "status": "Open",[m
+[31m-      "title": "ENGL*2080*0103 (5653) Finding a Critical Voice",[m
+[32m+[m[32m      "title": "ENVS*4190*01 (5709) Biological Activity: Herbicide",[m
+       "term": "Winter 2021",[m
+       "location": "Guelph",[m
+[31m-      "meeting_info": "LEC Mon, Wed\n11:30AM - 12:20PM\nAD-S, Room Virtual\nSEM Fri\n11:30AM - 12:20PM\nAD-S, Room Virtual\nEXAM Thur\n08:30AM - 10:30AM (2021/04/22)\nRoom TBA",[m
+[31m-      "faculty": "L. Allin",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Wed, Fri\n10:30AM - 11:20AM\nAD-S, Room Virtual\nEXAM Fri\n11:30AM - 01:30PM (2021/04/23)\nRoom TBA",[m
+[32m+[m[32m      "faculty": "F. Tardif",[m
+       "credits": "0.50",[m
+       "academic_level": "Undergraduate",[m
+       "available": "7",[m
+[31m-      "capacity": "25",[m
+[32m+[m[32m      "capacity": "65",[m
+       "code": {[m
+[31m-        "type": "ENGL",[m
+[31m-        "number": "2080",[m
+[31m-        "section": "0103"[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "4190",[m
+[32m+[m[32m        "section": "01"[m
+       }[m
+     },[m
+     {[m
+[31m-      "status": "Open",[m
+[31m-      "title": "ENGL*2120*01 (5654) Seminar: Critical Practices",[m
+[32m+[m[32m      "status": "Closed",[m
+[32m+[m[32m      "title": "ENVS*4190*AU01 (7422) Biological Activity: Herbicide",[m
+       "term": "Winter 2021",[m
+       "location": "Guelph",[m
+[31m-      "meeting_info": "LEC Mon, Wed\n02:30PM - 03:50PM\nAD-S, Room Virtual\nEXAM Wed\n11:30AM - 01:30PM (2021/04/21)\nRoom TBA",[m
+[31m-      "faculty": "G. Campbell",[m
+[31m-      "credits": "0.50",[m
+[32m+[m[32m      "meeting_info": "",[m
+[32m+[m[32m      "faculty": "TBA TBA",[m
+[32m+[m[32m      "credits": "0.00",[m
+       "academic_level": "Undergraduate",[m
+[31m-      "available": "12",[m
+[31m-      "capacity": "25",[m
+[32m+[m[32m      "available": "0",[m
+[32m+[m[32m      "capacity": "0",[m
+       "code": {[m
+[31m-        "type": "ENGL",[m
+[31m-        "number": "2120",[m
+[31m-        "section": "01"[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "4190",[m
+[32m+[m[32m        "section": "AU01"[m
+       }[m
+     },[m
+     {[m
+       "status": "Open",[m
+[31m-      "title": "ENGL*2120*02 (5655) Seminar: Critical Practices",[m
+[32m+[m[32m      "title": "ENVS*4370*01 (5711) Compounds in the Environment",[m
+       "term": "Winter 2021",[m
+       "location": "Guelph",[m
+[31m-      "meeting_info": "LEC Tues, Thur\n02:30PM - 03:50PM\nAD-S, Room Virtual\nEXAM Wed\n11:30AM - 01:30PM (2021/04/21)\nRoom TBA",[m
+[31m-      "faculty": "J. Struthers",[m
+[32m+[m[32m      "meeting_info": "LEC Mon, Wed, Fri\n11:30AM - 12:20PM\nAD-S, Room Virtual\nEXAM Thur\n11:30AM - 01:30PM (2021/04/15)\nRoom TBA",[m
+[32m+[m[32m      "faculty": "J. Longstaffe",[m
+       "credits": "0.50",[m
+       "academic_level": "Undergraduate",[m
+[31m-      "available": "12",[m
+[31m-      "capacity": "25",[m
+[32m+[m[32m      "available": "6",[m
+[32m+[m[32m      "capacity": "30",[m
+       "code": {[m
+[31m-        "type": "ENGL",[m
+[31m-        "number": "2120",[m
+[31m-        "section": "02"[m
+[32m+[m[32m        "type": "ENVS",[m
+[32m+[m[32m        "number": "4370",[m
+[32m+[m[32m        "section": "01"[m
+       }[m
+     },[m
+     {[
