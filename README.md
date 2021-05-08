@@ -1,5 +1,6 @@
 # CIS*4250 Team 6 Course Visualizer
 Welcome! Let's visualize some courses!
+Built by Maddie, Jovana, Abdullah, Jacob, Alistair and Dhruvi
 
 ## Test it out:
 1. Visit [http://cis4250-06.socs.uoguelph.ca/](http://cis4250-06.socs.uoguelph.ca/) to see our web app.
